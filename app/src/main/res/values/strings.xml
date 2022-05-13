@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">desafio-android-stant</string>
+    <string name="img_splash_screen">imgSplashScreen</string>
 </resources>
