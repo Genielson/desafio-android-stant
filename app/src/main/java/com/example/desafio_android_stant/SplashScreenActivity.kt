@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun callSplashScreenWithTime(){
         Handler(Looper.getMainLooper()).postDelayed({
-            var intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         },3000)
     }
