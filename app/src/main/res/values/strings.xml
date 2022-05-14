@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">desafio-android-stant</string>
     <string name="img_splash_screen">imgSplashScreen</string>
+    <string name="title_activity_home">HomeActivity2</string>
+    <string name="title_home">Popular</string>
+    <string name="title_dashboard">Top Rated</string>
+    <string name="title_notifications">UpComing</string>
 </resources>
