@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui.ui.home
+package com.example.desafio_android_stant.popular.view.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui.ui.notifications
+package com.example.desafio_android_stant.upcoming.view.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

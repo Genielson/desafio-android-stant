@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui.ui.dashboard
+package com.example.desafio_android_stant.toprated.view.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

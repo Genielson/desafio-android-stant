@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui.ui.home
+package com.example.desafio_android_stant.popular.view.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
