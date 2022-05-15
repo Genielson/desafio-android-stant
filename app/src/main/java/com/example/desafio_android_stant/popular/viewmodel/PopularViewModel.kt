@@ -6,7 +6,9 @@ import com.example.desafio_android_stant.popular.repository.PopularMoviesReposit
 import kotlinx.coroutines.Dispatchers
 
 class PopularViewModel(
-    var repository: PopularMoviesRepository) : ViewModel() {
+    var repository: PopularMoviesRepository
+    ) : ViewModel() {
+
     fun getListPopularMovies() = liveData(Dispatchers.IO){
         var response = repository.getListPopularMovies("en-US").result
         emit(response)
