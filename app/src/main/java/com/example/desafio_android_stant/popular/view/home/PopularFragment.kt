@@ -37,7 +37,7 @@ class PopularFragment : Fragment() {
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
         val root: View = binding.root
         linear = GridLayoutManager(root.context,2)
-        _adapter = PopularMoviesAdapter(_listMovies)
+        _adapter = PopularMoviesAdapter(requireContext(),_listMovies)
         configurePropertiesRecyclerView()
         configureViewModel()
         return root
