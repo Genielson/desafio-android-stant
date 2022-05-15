@@ -1,20 +1,31 @@
 package com.example.desafio_android_stant.popular.view.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.desafio_android_stant.data.adapters.PopularMoviesAdapter
+import com.example.desafio_android_stant.data.models.ResponseResultModel
 import com.example.desafio_android_stant.databinding.FragmentPopularBinding
+import com.example.desafio_android_stant.popular.repository.PopularMoviesRepository
+import com.example.desafio_android_stant.popular.viewmodel.PopularViewModel
 
 class PopularFragment : Fragment() {
 
     private var _binding: FragmentPopularBinding? = null
+    private lateinit var linear:LinearLayoutManager
+    private lateinit var _adapter : PopularMoviesAdapter
+    private var _listMovies = mutableListOf<ResponseResultModel>()
+    private lateinit var _viewModel: PopularViewModel
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,17 +33,39 @@ class PopularFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(PopularViewModel::class.java)
 
         _binding = FragmentPopularBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        linear = GridLayoutManager(root.context,2)
+        _adapter = PopularMoviesAdapter(_listMovies)
+        configurePropertiesRecyclerView()
+        configureViewModel()
         return root
+    }
+
+    private fun showMoviesRecyclerView(listMovies : List<ResponseResultModel>){
+        _listMovies.clear()
+        _listMovies.addAll(listMovies)
+        _adapter.notifyDataSetChanged()
+    }
+
+    private fun configureViewModel(){
+        _viewModel = ViewModelProvider(
+            this,
+            PopularViewModel.PopularViewModelFactory(PopularMoviesRepository())
+        ).get(PopularViewModel::class.java)
+
+        _viewModel.getListPopularMovies().observe(viewLifecycleOwner,{
+            showMoviesRecyclerView(it)
+        })
+    }
+
+    private fun configurePropertiesRecyclerView(){
+        binding.recyclerViewPopularMovies.apply {
+            setHasFixedSize(true)
+            layoutManager = linear
+            adapter = _adapter
+        }
     }
 
     override fun onDestroyView() {
