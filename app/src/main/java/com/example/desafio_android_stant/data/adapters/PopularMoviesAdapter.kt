@@ -1,15 +1,20 @@
 package com.example.desafio_android_stant.data.adapters
 
+import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.desafio_android_stant.DescriptionMovieActivity
 import com.example.desafio_android_stant.R
 import com.example.desafio_android_stant.data.models.ResponseResultModel
 import com.squareup.picasso.Picasso
 
-class PopularMoviesAdapter(private var movies: MutableList<ResponseResultModel>):RecyclerView.Adapter<PopularMoviesAdapter.PopularMoviesViewHolder>() {
+class PopularMoviesAdapter(var context : Context, private var movies: MutableList<ResponseResultModel>):RecyclerView.Adapter<PopularMoviesAdapter.PopularMoviesViewHolder>() {
 
     class PopularMoviesViewHolder(private val view: View): RecyclerView.ViewHolder(view) {
         private val image = view.findViewById<ImageView>(R.id.imgMovie)
@@ -29,6 +34,15 @@ class PopularMoviesAdapter(private var movies: MutableList<ResponseResultModel>)
     override fun onBindViewHolder(holder: PopularMoviesViewHolder, position: Int) {
         val item = movies[position]
         holder.bind(item)
+        holder.itemView.findViewById<ImageView>(R.id.imgMovie).setOnClickListener {
+            var intent = Intent(context,DescriptionMovieActivity::class.java)
+            intent.putExtra("movie_backdrop",item.backdrop_path)
+            intent.putExtra("movie_poster_card",item.poster_path)
+            intent.putExtra("movie_title",item.title)
+            intent.putExtra("movie_release_date",item.release_date)
+            intent.putExtra("movie_overview",item.overview)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int =  movies.size
