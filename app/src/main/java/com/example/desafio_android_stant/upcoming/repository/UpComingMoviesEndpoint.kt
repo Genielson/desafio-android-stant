@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface UpComingMoviesEndpoint {
 
     @GET("/3/movie/upcoming")
-    suspend fun getTopRatedMovies(
+    suspend fun getUpComingMovies(
         @Query("api_key")api_key:String,
         @Query("language")language:String
     ) : MovieContentModel
