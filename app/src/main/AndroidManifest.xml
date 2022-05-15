@@ -15,11 +15,11 @@
             android:name=".DescriptionMovieActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".splashscreen.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".ui.SplashScreenActivity"
+            android:name=".splashscreen.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.NoActionBar">
             <intent-filter>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".splashscreen.MainActivity"
             android:exported="false" />
     </application>
 

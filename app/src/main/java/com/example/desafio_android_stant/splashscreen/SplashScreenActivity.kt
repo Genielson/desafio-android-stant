@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui
+package com.example.desafio_android_stant.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

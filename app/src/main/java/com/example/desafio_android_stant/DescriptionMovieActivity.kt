@@ -16,6 +16,7 @@ class DescriptionMovieActivity : AppCompatActivity() {
     private lateinit var movieReleaseDate : TextView
     private lateinit var movieOverview : TextView
     private lateinit var toolbarTitleText : TextView
+    private lateinit var originaLanguage : TextView
     private lateinit var imageBack : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +43,12 @@ class DescriptionMovieActivity : AppCompatActivity() {
 
     private fun setComponentsById(){
         val intent = intent
-        var title = intent.getStringExtra("movie_title")
-        var backdrop = intent.getStringExtra("movie_backdrop")
-        var poster = intent.getStringExtra("movie_poster_card")
-        var date = intent.getStringExtra("movie_release_date")
-        var overview = intent.getStringExtra("movie_overview")
+        val title = intent.getStringExtra("movie_title")
+        val backdrop = intent.getStringExtra("movie_backdrop")
+        val poster = intent.getStringExtra("movie_poster_card")
+        val date = intent.getStringExtra("movie_release_date")
+        val overview = intent.getStringExtra("movie_overview")
+        val language = intent.getStringExtra("original_language")
         movieTitle.setText(title)
         toolbarTitleText.setText(title)
         Picasso.get()
@@ -57,12 +59,14 @@ class DescriptionMovieActivity : AppCompatActivity() {
             .into(moviePosterCard)
         movieReleaseDate.setText(date)
         movieOverview.setText(overview)
+        originaLanguage.setText("Original language : "+language)
     }
 
     private fun initializeComponents(){
         movieBackdrop = findViewById(R.id.movie_backdrop)
         moviePosterCard = findViewById(R.id.movie_poster)
         movieTitle = findViewById(R.id.movie_title)
+        originaLanguage = findViewById(R.id.movie_original_language)
         movieReleaseDate = findViewById(R.id.movie_release_date)
         movieOverview = findViewById(R.id.movie_overview)
         toolbarTitleText = findViewById(R.id.txtTitleMovie);

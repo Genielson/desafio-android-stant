@@ -95,6 +95,17 @@
             app:layout_constraintStart_toStartOf="@+id/movie_title"
             app:layout_constraintTop_toBottomOf="@+id/movie_title" />
 
+        <TextView
+            android:id="@+id/movie_original_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="Original language : EN"
+            app:layout_constraintStart_toStartOf="@+id/movie_release_date"
+            app:layout_constraintTop_toBottomOf="@+id/movie_release_date" />
+
+
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/movie_poster_title_barrier"
             android:layout_width="wrap_content"

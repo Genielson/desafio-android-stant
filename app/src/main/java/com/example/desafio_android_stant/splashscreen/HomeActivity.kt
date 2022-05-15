@@ -1,4 +1,4 @@
-package com.example.desafio_android_stant.ui
+package com.example.desafio_android_stant.splashscreen
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
