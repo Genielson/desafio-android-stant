@@ -35,8 +35,6 @@
                 android:layout_marginLeft="30dp"
                 />
 
-
-
         </com.google.android.material.appbar.MaterialToolbar>
 
         <ImageView

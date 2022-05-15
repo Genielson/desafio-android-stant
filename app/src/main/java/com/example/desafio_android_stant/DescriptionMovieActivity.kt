@@ -16,6 +16,7 @@ class DescriptionMovieActivity : AppCompatActivity() {
     private lateinit var movieReleaseDate : TextView
     private lateinit var movieOverview : TextView
     private lateinit var toolbarTitleText : TextView
+    private lateinit var imageBack : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,13 @@ class DescriptionMovieActivity : AppCompatActivity() {
         hideActionBar()
         initializeComponents()
         setComponentsById()
+        clickButtonBackScreen()
+    }
+
+    private fun clickButtonBackScreen(){
+        imageBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun hideActionBar(){
@@ -31,7 +39,6 @@ class DescriptionMovieActivity : AppCompatActivity() {
             actionBar.hide()
         }
     }
-
 
     private fun setComponentsById(){
         val intent = intent
@@ -59,5 +66,6 @@ class DescriptionMovieActivity : AppCompatActivity() {
         movieReleaseDate = findViewById(R.id.movie_release_date)
         movieOverview = findViewById(R.id.movie_overview)
         toolbarTitleText = findViewById(R.id.txtTitleMovie);
+        imageBack = findViewById(R.id.imgBtnBack)
     }
 }
