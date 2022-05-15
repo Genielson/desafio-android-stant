@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface TopRatedMoviesEndpoint {
 
     @GET("/3/movie/toprated")
-    suspend fun getPopularMovies(
+    suspend fun getTopRatedMovies(
         @Query("api_key")api_key:String,
         @Query("language")language:String
     ) : MovieContentModel
