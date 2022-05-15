@@ -5,7 +5,7 @@ Um simples aplicativo que consome a API de filmes [TMDb](https://www.themoviedb.
 ## Arquitetura e Tecnologias usadas
 
 * Feito utilizando a arquitetura MVVM 
-* Utiliza a biblioteca [Picaso](https://square.github.io/picasso/) para carregamento de imagens
+* Utiliza a biblioteca [Picasso](https://square.github.io/picasso/) para carregamento de imagens
 * Utiliza a biblioteca [Retrofit](https://square.github.io/retrofit/) para chamadas de API.
 * Utiliza Bottom navigation para transição de telas.
 * Utiliza RecyclerView para listar os filmes
